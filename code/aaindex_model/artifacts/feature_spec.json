@@ -1,0 +1,46 @@
+{
+  "model_name": "aaindex_nested_cv_auto6",
+  "source_script": "nested_cv.py",
+  "source_script_sha256": "51f229b140dbed111d48cb6a0b71058e192e40439ea14800b61ef48156472857",
+  "task": "xylanase activity regression",
+  "sequence_space": "S7 360 aa（S7 1-based 编号；PDB 残基号与之一致）",
+  "encoding": "nested_cv.build_all_features（全部 AAindex1 逐位点 + AAC + DPC）",
+  "algorithm": "gradientboosting",
+  "random_state": 2026,
+  "n_sequences_train": 126,
+  "n_features_total": 199500,
+  "n_aaindex_codes_used": 553,
+  "n_aaindex_codes_skipped": 13,
+  "audit": {
+    "N_original": 199500,
+    "N_after_variance": 167829,
+    "N_prefilter": 1000,
+    "N_corr_input": 500,
+    "N_after_correlation": 9,
+    "N_SHAP_candidates": 9,
+    "N_final_features": 5
+  },
+  "selected_features": [
+    "FASG760105_pos_137",
+    "AAC_I",
+    "GEIM800102_pos_137",
+    "LEVM780103_pos_137",
+    "NAKH920103_pos_137"
+  ],
+  "hyperparams": {
+    "prefilter_k": 1000,
+    "corr_top_k": 500,
+    "corr_threshold": 0.95,
+    "shap_top_k": 100,
+    "shap_max_background": 80,
+    "shap_max_explain": 120,
+    "sfs_min_features": 5,
+    "sfs_max_features": 15,
+    "sfs_scoring": "spearman",
+    "sfs_tolerance": 0.0
+  },
+  "provenance": {
+    "source_script_path": "D:/APEH2.0/Xylanase_2/all_aaindex_nested_cv_auto6(1).py",
+    "note": "本包内的 nested_cv.py 与该脚本逐字节一致（SHA256 见上）。"
+  }
+}

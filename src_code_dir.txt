@@ -1,0 +1,4 @@
+# APEH v2.11 工作目录（GROMACS 模板 + 步骤脚本 + ProteinMPNN + 打分模型）
+# 首行为绝对路径；以 # 开头的是注释行，可删除本文件改用环境变量
+# APEH_SRC_CODE_DIR，或直接依赖默认位置 ..\work\src\code。
+D:\apeh\v2.11\work\src\code

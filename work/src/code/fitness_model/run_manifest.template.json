@@ -1,0 +1,55 @@
+{
+  "_comment": "模型输出清单模板：每一次模型运行都应生成一份 run_manifest.json，记录输入、代码哈希、参数与产出，用于可复现/可追溯。所有 `${...}` 为占位，运行时替换为真实值。",
+  "manifest_version": "1.0",
+  "run_id": "${run_id}-YYYYMMDD_HHMMSS",
+  "generated_at": "2026-09-09T00:00:00Z",
+  "target": {
+    "name": "2UWF_Bacillus_halodurans_GH10",
+    "description": "木聚糖酶 356-aa 成熟域构建体（= 催化域 + C 端 6xHis）",
+    "pdb_sha256": "${input_pdb_sha256}",
+    "pdb_path": "${input_pdb_path}",
+    "wt_len": 356
+  },
+  "code": {
+    "repo_commit": "${repo_commit_hash}",
+    "entrypoint": "src/code/run_all.py",
+    "steps_run": ["md", "recommendation", "proteinmpnn", "fitness"],
+    "git_branch": "feature/last_fix"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "gmx": "${gmx_version}",
+    "proteinmpnn_version": "${proteinmpnn_version}",
+    "proteinmpnn_weights_sha256": "${weights_sha256}",
+    "torch": "2.11.0+cu128",
+    "seed": 37
+  },
+  "inputs": {
+    "design_positions": "${A101 A110 A325 或 FROM_RECOMMENDATIONS}",
+    "reference_run_dir": "${results/gromacs_proteinmpnn/<批次>}",
+    "fitness_artifacts_sha256": "a6089a8d4ef34287f530e2fff9a68ccb4d32b97aeb80bc7f170a4b2435e7f377"
+  },
+  "params": {
+    "num_sequences": "${20}",
+    "sampling_temp": "${0.2}",
+    "omit_aas": "${PC}",
+    "focus_lengths": "${4-7}",
+    "min_pred": "${0}",
+    "top_k": "${20}"
+  },
+  "outputs": {
+    "candidates": "candidates.csv",
+    "audited_candidates": "audited_candidates.csv",
+    "recommended_positions": "recommended_positions.csv",
+    "topn": "top_n.csv",
+    "fitness_report": "fitness_report.json"
+  },
+  "attribution": {
+    "per_protein_specificity": "true",
+    "used_artifacts_backup_360wt": "${false/true}"
+  },
+  "validation": {
+    "md_physical_plausibility_passed": "${true/false}",
+    "notes": "平均温度/压力须落在可信区间，否则该项不构成有效证据"
+  }
+}

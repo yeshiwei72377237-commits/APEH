@@ -1,0 +1,27 @@
+# APEH v2.11 — Python 依赖清单（干实验全流程）
+#
+# 本文件是**增量**依赖清单：GROMACS / ProteinMPNN 由工作目录
+# （D:\apeh\v2.11\work\src\code，见 ..\src_code_dir.txt）里的实现承担，
+# 其自身的依赖沿用 work\src\code 内自带的 requirements*.txt；
+# 这里列出 Step 8~10（位置推荐 / 序列设计 / 活性打分）所需的 Python 包。
+#
+# 安装：
+#   D:\EvoEngine\envs\apeh\python.exe -m pip install -r D:\apeh\v2.11\code\requirements.txt
+#
+# 本机已验证环境：D:\EvoEngine\envs\apeh（conda 环境 apeh，Python 3.14.7）
+# 开工先自检：D:\EvoEngine\envs\apeh\python.exe D:\apeh\v2.11\code\check_env.py
+# 运行说明见 ..\运行命令.md
+
+# --- 运行时必需（打分 / 训练都用到）---
+numpy>=1.24            # 已验版本 2.5.3
+pandas>=2.0            # 已验版本 3.0.6
+scipy>=1.10            # 已验版本 1.18.1（Spearman 相关）
+scikit-learn>=1.4      # 已验版本 1.9.0（折内流程、估计器、CV）
+aaindex>=1.2           # 已验版本 1.3.2（AAindex1 数据库，特征编码必需）
+biopython>=1.80        # 已验版本 1.88（2UWF 356aa → S7 360aa 全局比对映射）
+shap>=0.44             # 已验版本 0.52.0（折内 SHAP 排序；nested_cv.py 顶层导入）
+
+# --- 可选：第 6 种对比算法 ---
+# nested_cv.py 的 ALGORITHMS 含 "xgb"；若启用需安装 xgboost（不装则该项报错，
+# 其余 5 个算法不受影响）。
+xgboost>=2.0           # 已验版本 3.4.1

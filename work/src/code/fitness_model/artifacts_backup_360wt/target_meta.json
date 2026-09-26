@@ -1,0 +1,16 @@
+{
+  "xlsx": "data/raw/Supplementary-Material-2.xlsx",
+  "sheet": "Sheet1",
+  "target": "activity",
+  "wt_len": 360,
+  "n_samples": 126,
+  "n_features": 30,
+  "cv": {
+    "n_samples": 126,
+    "n_features": 30,
+    "r2": 0.31229415552212847,
+    "mae": 0.4627154621922238,
+    "rmse": 0.604748823638519,
+    "spearman": 0.6416477565027936
+  }
+}

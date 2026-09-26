@@ -1,0 +1,110 @@
+{
+    "dataset": {
+        "dataset": "test_activity_1.csv",
+        "sequence_col": "Sequence",
+        "activity": "Fitness"
+    },
+    "model": {
+        "algorithm": "gradientboostingregressor",
+        "parameters": {},
+        "test_split": 0.8
+    },
+    "descriptors": {
+        "descriptors_csv": " ",
+        "all_desc": 0,
+        "moreaubroto_autocorrelation": {
+            "lag": 30,
+            "properties": [
+                "CIDH920105",
+                "BHAR880101",
+                "CHAM820101",
+                "CHAM820102",
+                "CHOC760101",
+                "BIGC670101",
+                "CHAM810101",
+                "DAYM780201"
+            ],
+            "normalize": 1
+        },
+        "moran_autocorrelation": {
+            "lag": 30,
+            "properties": [
+                "CIDH920105",
+                "BHAR880101",
+                "CHAM820101",
+                "CHAM820102",
+                "CHOC760101",
+                "BIGC670101",
+                "CHAM810101",
+                "DAYM780201"
+            ],
+            "normalize": 1
+        },
+        "geary_autocorrelation": {
+            "lag": 30,
+            "properties": [
+                "CIDH920105",
+                "BHAR880101",
+                "CHAM820101",
+                "CHAM820102",
+                "CHOC760101",
+                "BIGC670101",
+                "CHAM810101",
+                "DAYM780201"
+            ],
+            "normalize": 1
+        },
+        "ctd": {
+            "property": "",
+            "all": 1
+        },
+        "sequence_order_coupling_number": {
+            "lag": 60,
+            "distance_matrix": "schneider-wrede-physiochemical-distance-matrix.json"
+        },
+        "quasi_sequence_order": {
+            "lag": 80,
+            "weight": 0.1,
+            "distance_matrix": "schneider-wrede-physiochemical-distance-matrix.json"
+        },
+        "pseudo_amino_acid_composition": {
+            "lambda": 30,
+            "weight": 0.05,
+            "properties": [
+                "CIDH920105",
+                "BHAR880101",
+                "CHAM820101",
+                "CHAM820102",
+                "CHOC760101",
+                "BIGC670101",
+                "CHAM810101",
+                "DAYM780201"
+            ]
+        },
+        "amphiphilic_pseudo_amino_acid_composition": {
+            "lambda": 30,
+            "weight": 0.5
+        }
+    },
+    "pyDSP": {
+        "use_dsp": 0,
+        "spectrum": "power",
+        "window": {
+            "type": "blackmanharris",
+            "sym": 1,
+            "beta": 14,
+            "alpha": null,
+            "nbar": null,
+            "sll": null,
+            "norm": null
+        },
+        "filter": {
+            "type": null,
+            "window_length": 5,
+            "polyorder": 2,
+            "deriv": 0,
+            "delta": 1,
+            "mode": "interp"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+# ===== APEH v2.11 运行产物 (不纳入版本管理) =====
+work/src/code/GROMACS/MD_result/
+work/src/code/GROMACS/output_statistics/
+work/src/code/GROMACS/temporary_files/
+work/src/code/GROMACS/mdp_runs/
+# 输入结构: input_pdb/ 是流程素材 (必需); input_rename/ 由 Step 0 自动生成
+work/src/code/GROMACS/input_rename/*.pdb
+work/src/code/GROMACS/*.log
+work/results/
+result/*
+!result/.gitkeep
+
+# ===== GROMACS 大文件 / 中间产物 =====
+*.xtc
+*.trr
+*.edr
+*.tpr
+*.cpt
+*.gro
+*.xvg
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ===== 模型权重 =====
+*.pt
+*.pth
+# 例外: ProteinMPNN 推理权重是流程必需文件, 随仓库分发
+!work/src/code/ProteinMPNN/ProteinMPNN-main/vanilla_model_weights/*.pt
+
+# ===== 编辑器 / 系统 =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
